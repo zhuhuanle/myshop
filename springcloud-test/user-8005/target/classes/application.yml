@@ -1,0 +1,15 @@
+server:
+  port: 8005
+spring:
+  application:
+    name: user-provid
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1.com:7001/eureka/,http://eureka2.com:7002/eureka/,http://eureka3.com:7003/eureka/
+  instance:
+    instance-id: user:8005 #指定服务名称
+    prefer-ip-address: true #暴露ip地址
+feign:
+  hystrix:
+    enabled: true

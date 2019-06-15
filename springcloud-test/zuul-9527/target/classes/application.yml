@@ -1,0 +1,25 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: service-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1.com:7001/eureka/,http://eureka2.com:7002/eureka/,http://eureka3.com:7003/eureka/
+  instance:
+    instance-id: servicezuul.com
+    prefer-ip-address: true
+info:
+  app.name: atguigu
+  company.name: www.atguigu.com
+  buider.artifactId: zuul-9527
+  builder.version: 1.0-SNAPSHOT
+zuul:
+  prefix: /atguigu #添加统一的入口
+  ignored-services: "*" #禁止从http://servicezuul.com:9527/servicecloud-provid/zuul入口访问
+  routes:
+    mydept.serviceId: mechant-provid
+    mydept.path: /mechant/** #允许从从http://servicezuul.com:9527/dept入口访问
+    myuser.serviceId: user-provid
+    myuser.path: /user/**

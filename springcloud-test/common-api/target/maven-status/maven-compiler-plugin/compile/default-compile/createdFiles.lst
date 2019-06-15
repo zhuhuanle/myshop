@@ -1,0 +1,7 @@
+com\test\bean\Order.class
+com\test\hytrixFallbackFactory\MechantFallbackFactory.class
+com\test\service\mechant\MechantService.class
+com\test\bean\Mechant.class
+com\test\service\order\OrderService.class
+com\test\bean\Ouser.class
+com\test\hytrixFallbackFactory\MechantFallbackFactory$1.class
