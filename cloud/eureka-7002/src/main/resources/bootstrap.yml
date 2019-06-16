@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      name: servicecloud-config-eureka-7002 #从github读取的资源名称 没有yml后坠
+      profile: test #读取的配置项
+      label: master
+      uri: http://configserivce.com:3344 #springcloud-client启动起来先去找server端
