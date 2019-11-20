@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 47.103.137.92:8848
+    sentinel:
+      transport:
+        dashboard: 47.103.137.92:8718
+        eager: true
+    gateway:
+      routes:
+      - id: path_route
+        uri: https://www.baidu.com
+        order: 0
+        predicates:
+        - Path=/foo/**
+        filters:
+        - StripPrefix=2
+  redis:
+    database: 0
+    host: 47.102.203.94
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+user:
+  name: "zhu_happy"
+feign:
+  sentinel:
+    enabled: true
+
